@@ -1,4 +1,6 @@
 #include<iostream>
+#include<string>
+#include<list>
 
 using namespace std;
 
@@ -28,7 +30,29 @@ class File{
         Date date;
 };
 
+class TextFile : public File{
+    public: 
+        void set_location(string my_location){location = my_location ;}
+        string get_location(){return location ; }
+    private: 
+        string location ; 
+};
 
+//everything till this point works 
+/*
+class Directory : public File{
+    public: 
+        Directory(list <Directory> x, list <TextFile> y){
+            this->x = sub_directories ;
+            this->y = text_files ; 
+       }  
+    private : 
+        list <Directory> sub_directories; 
+        list <TextFile> text_files; 
+        //list <ExecFile> exec_files; 
+        Directory* parent_directory; 
+};
+*/
 int main(){
     int rights[] = {'r','w','x'};
     File file("test_file",rights,{11,03,2003});

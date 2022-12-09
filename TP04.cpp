@@ -21,11 +21,6 @@ class Directory(File){
        list<Exec_files> get_exec_files() {return exec_files ;}    
 };
 
-([])
-
-
-
-
 class TextFile(File){
     private : 
     string location ; 
