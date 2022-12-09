@@ -2,7 +2,7 @@
 
 using namespace std;
 
-struct date{
+struct Date{
     int day;
     int month;
     int year;
@@ -11,28 +11,28 @@ struct date{
 
 class File{
     public:
-        void set_name(string my_name){name = my_name;}
-        string get_name(){return name;}
-        void set_permission(int my_permission){
+        File(string name ,int permission[3],Date date){
+            this->name = name;
+            for(int i=0;i<3;i++) this->permission[i] = permission[i];
+            this->date.day = date.day; this->date.month = date.month; this->date.year = date.year;
 
-            if my_permission != 'r'
-            permission = my_permission;}
-        int get_permission(){return permission;}
-        void set_date(my_day,my_month,my_year){date = {my_day,my_month,my_year};}
-        date get_date(){return date_creation;}
+        }
+        void set_name(string my_name){name = my_name;}
+        int* get_permission(){return permission;}
+        string get_name(){return name;}
+        //void set_date(int my_day,int my_month,int my_year){date_creation = {my_day,my_month,my_year};}
+        Date get_date(){return date;}
     private:
         string name;
-        int permission;
-        date date_creation;
+        int permission[3];
+        Date date;
 };
 
-class ExecFile(TextFile){
-    private:
-        bool flag;
-        ExecFile 
-};
 
-class Shell{
-    private:
-        Directory ROOTDIR
-};
+int main(){
+    int rights[] = {'r','w','x'};
+    File file("test_file",rights,{11,03,2003});
+    cout<<file.get_name()<<endl;
+    cout<<file.get_permission()[0]<<endl;
+    return 0;
+}
